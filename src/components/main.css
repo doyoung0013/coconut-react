@@ -1,0 +1,172 @@
+.boardName{
+    display: block;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.board-title {
+    font-size: 28px;
+    margin: 20px 0;
+    color: #333;
+}
+
+.divider {
+    border: 1px solid #13435f;
+}
+
+.post-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.post-item {
+    width: 80%; /* 게시글의 너비 */
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 15px;
+    transition: box-shadow 0.3s;
+}
+
+.post-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 호버 시 그림자 효과 */
+}
+
+.post-link {
+    text-decoration: none;
+    color: #216b96;
+}
+
+.post-link h2 {
+    margin: 0; /* 제목 마진 제거 */
+    font-size: 20px;
+}
+
+.post-link p {
+    margin: 5px 0; /* 작성자 및 날짜 마진 */
+    color: #666;
+    font-size: 14px;
+}
+
+
+/*BoardPage*/
+.board-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-top: 10px;
+}
+.post-container {
+    width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.post-container h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.post-meta {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.post-content {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #444;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.edit-button, .delete-button {
+    background-color: #13435f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.edit-button:hover {
+    background-color: #13435f;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.delete-button {
+    background-color: #13435f;
+}
+
+.delete-button:hover {
+    background-color: #13435f;
+}
+
+
+/*작성 페이지*/
+.form-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="date"],
+textarea {
+    width: 97%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.submit-button {
+    background-color: #13435f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #13435f;
+}

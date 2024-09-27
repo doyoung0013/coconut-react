@@ -5,15 +5,20 @@ import { getList } from "../api/fetchPosts";
 const ReadList = () => {
 
     const [list, setList] = useState([]);
+    const [totalPages,setTotalPages]=useState(0)
+    const [currPage,setCurrPage]=useState(1)
 
     useEffect(() => {
-        getList()
+        getList(currPage)
         .then(data => {
-            setList(data); // 불러온 데이터를 상태에 저장
+            console.log(data)
+            setList(data.content)//불러온 데이터를 상태에 저장
+            setTotalPages(data.totalPages)//총페이지수==마지막페이지번호
+            setCurrPage(data.number+1)
         })    
-    }, [])
+    }, [currPage])
 
-    return (
+    return (<>
         <ul className="post-list">
             {list.map((item) => (
                 <li className="post-item" key={item.pno}> 
@@ -24,6 +29,18 @@ const ReadList = () => {
                 </li>
             ))}
         </ul>
+        <Pagination currPage={currPage} totalPages={totalPages} setCurrPage={setCurrPage}/>
+        </>)
+}
+
+////////////////////////////////////////////////
+function Pagination({currPage, totalPages, setCurrPage}){
+    return (
+    <div style={{ textAlign: 'center' }}>
+        <button disabled={currPage === 1} onClick={()=>setCurrPage(currPage-1<1?1:currPage-1)}>&lt;</button>
+        <strong>{currPage}</strong> / <span>{totalPages}</span>
+        <button disabled={currPage === totalPages} onClick={()=>setCurrPage(currPage+1>totalPages?totalPages:currPage+1)}>&gt;</button>
+    </div>
     )
 }
 

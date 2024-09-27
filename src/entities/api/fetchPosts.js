@@ -8,8 +8,8 @@ export const getDetail = async (pno) => {
     return data;
 }
 
-export const getList = async () => {
-    const response = await fetch(`${prefix}`);
+export const getList = async (currPage) => {
+    const response = await fetch(`${prefix}?page=${currPage}`);
     const data = await response.json();
     return data;
 }
